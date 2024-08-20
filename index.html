@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temerature Calculator</title>
+
+    <style>
+        .converter{
+            width: 999px;
+            height: 333px;
+            margin: auto;
+            background: linear-gradient(white, rgb(30, 30, 105));
+            margin-top: 111px;
+        }
+        .temp{
+            width: 555px;
+            height: 55px;
+            margin: auto;
+            display: flex;
+        }
+        .body{
+            width: 488px;
+            height: 55px;
+            margin: auto;
+            border-top-right-radius: 88px;
+            border-bottom-right-radius: 88px;
+            background-color: rgb(30, 30, 105);
+            display: flex;
+            justify-content: space-between;
+            padding: 0 22px;
+        }
+        button{
+            width: 91px;
+            height: 33px;
+            margin-top: 11px;
+            margin-left: -11px;
+            background-color: rgb(30, 30, 105);
+            border: 0;
+            font-size: 17px;
+            font-weight: 600;
+            color: aliceblue;
+        }
+        input{
+            width: 77px;
+            height: 17px;
+            display: flex;
+            align-self: center;
+            outline: none;
+            text-align: center;
+            font-size: 17px;
+            font-weight: 800;
+        }
+        h1, h2{
+            text-align: center;
+            color: rgb(30, 30, 105);
+        }
+        .output{
+            width: 444px;
+            height: 77px;
+            margin: auto;
+            margin-top: 55px;
+        }
+    </style>
+</head>
+<body>
+   <div class="converter">
+    <h1>Temperature converter</h1>
+    <h2>Check your Temperature in Fahrenheit</h2>
+    <div class="temp">
+        <div class="body">
+            <input type="text" id="celcius" placeholder="Cel">
+            <input type="text" id="fahr" placeholder="Fahr">
+        </div>
+        <button onclick="button()">convert</button>
+    </div>
+    <div class="output">
+
+    </div>
+   </div>
+</body>
+</html>
+<script>
+    let cel = document.querySelector('#celcius').value.trim()
+    let far = document.querySelector('#fahr').value
+    let output = document.querySelector('.output')
+
+    function button() {
+        let cel = document.querySelector('#celcius').value.trim()
+        let far = document.querySelector('#fahr').value
+        let output = document.querySelector('.output')
+
+
+        if (cel === '' || isNaN(cel)) {
+            output.innerHTML = '<h3>please input a valid temperature in celcius</h3>'
+            return
+        }
+
+            let fahr = (cel * 9 / 5) + 32
+            document.querySelector('#fahr').value = fahr
+            output.innerHTML = `<h3>${cel} Celcius is equal to ${fahr} Fahrenheit</h3>`
+       
+        
+    }
+</script>
